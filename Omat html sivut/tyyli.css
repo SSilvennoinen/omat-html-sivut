@@ -1,0 +1,45 @@
+/*kommentti*/
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body {color:rgb(0, 0, 0); /*tekstin väri*/
+    background-color: rgb(255, 255, 255); /*taustaväri*/
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 50px;
+}
+main {background-color:rgb(255, 255, 255);
+  
+
+
+}
+h1 {font-size: 30pt;
+font-family:"Raleway", sans-serif;
+text-align: center;}
+h2 {font-family: "Raleway",sans-serif;
+font-size: 22pt;
+text-align: center;}
+p {font-family:"Open Sans", system-ui;}
+p{font-size: 16pt;}
+.keskelle{text-align: center;}/*kuvan keskitys*/
+.keskelle img{max-width: 100%;
+          height: auto;  
+
+}/*skaalautuu mobiiliin*/
+footer{
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .content {
+        flex-direction: row; /* Pöytäkone: vierekkäin */
+        justify-content: center;
+        align-items: center;
+    }
+    .keskelle img {
+        max-width: 300px; /* Rajoittaa kuvan koon suuremmilla näytöillä */
+        margin-right: 20px; /* Välitila kuvan ja tekstin välillä */
+    }
+    h1 {
+        text-align: left; /* Tekstin tasaus vasemmalle */
+    }
+}

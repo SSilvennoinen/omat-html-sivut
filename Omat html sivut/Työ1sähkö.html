@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sähkötarjous</title>
+	<!-- 
+Ohjelma kysyy käyttäjän sähkötarjouksen hinnan ja vertaa sitä vuoden 2023 pörssisähkön keskihintaan, 
+joka oli 7,02 senttiä/kWh.
+Jos tarjouksen hinta on alle 7, kerro hinnan on vuoden 2023 keskihintaa alempi.
+Jos tarjouksen hinta on 7-8 kerro hinnan olevan vuoden 2023 keskihintaa vastaava.
+Jos tarjouksen hinta on yli 8, kerro on vuoden 2023 keskihintaa kalliimpi
+ -->
+</head>
+
+<body>
+    <h1>Sähkötarjouksen vertailuohjelma</h1>
+    <p>Tämä ohjelma kysyy käyttäjän sähkötarjouksen hinnan ja vertaa sitä vuoden 2023 pörssisähkön keskihin-taan, joka oli 7.02 senttiä/kWh.</p>
+	<div style="padding: 10px; background-color: #FDD1D2  ; color: black; width: 300px; height: 150px;">
+	<h3>Sähkötarjous</h3>
+
+	<form>
+		<label>Tarjoushinta:</label>
+		<input type="text" id="hintatarjous" size="3"> snt/kWh
+
+		<input type="button" id="painike" value="Kerro" onclick="kerro()">
+	</form>
+
+	<p id="vastaus"></p>
+            </div>
+
+	<script>
+		function kerro() {
+			//1 esittele muuttujat 
+			const keskihinta = 7.02;
+			let hintatarjous = (document.getElementById ("hintatarjous").value);
+            let vastaus = "";
+			//2
+	
+			if (hintatarjous < 7){
+				vastaus = "Tarjous on vuoden 2023 keskihintaa 7.02 alhaisempi"
+			} else if (hintatarjous >= 7 && hintatarjous <=8) {
+				vastaus = "Tarjous on vuoden 2023 keskihintaa 7.02 vastaava"
+			} else if (hintatarjous >8) {
+				vastaus = "Tarjous on vuoden 2023 keskihintaa 7.02 kalliimpi"
+
+			}
+			//3
+			document.getElementById("vastaus").innerHTML = vastaus;
+		}
+	</script>
+</body>
+
+</html>

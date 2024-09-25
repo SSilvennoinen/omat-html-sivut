@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Arvosana</title>
+</head>
+
+<body>
+    <h1>Arvosanaohjelma</h1>
+    <p> Tämä ohjelma näyttää opiskelijan saaman arvosanan kirjaimin, kun siihen syötetään opiskelijan tentistä saama pistemäärä.<br><br> 
+        Pisteet ja vastaava arvosana:<br><br>
+        27–30     kiitettävä eli 5 <br>
+        24–26     erinomainen eli 4 <br>
+        21–23     hyvä eli 3 <br>
+        18–20     tyydyttävä eli 2 <br>
+        15–17     heikko eli 1 <br>
+        Alle 15   hylätty eli 0 <br>
+        </p>
+    <!--div luo laatikon sen sisällä oleviin juttusiin stylellä määritellään laatikon tyyli-->
+        <div style="padding: 10px; background-color:#D4BBDD  ; color: black; width: 300px; height: 150px;">
+	
+            <h3>Arvosana</h3>
+
+	<form>
+		<label>Pisteet (0-30): </label>
+		<input type="text" name="pisteet" id="pisteet" size="3">
+		<input type="button" id="painike" value="Kerro arvosana" onClick="kerroArvosana()">
+	</form>
+
+	<!-- Tänne kirjoitetaan vastaus JavaScriptillä -->
+	<p id="vastaus"></p>
+</div>
+
+	<script>
+		function kerroArvosana() {
+			//kerrotaan pistemäärän perusteella tentin arvosana
+			//1 muuttujan syöte
+			let pisteet =document.getElementById("pisteet").value;
+            let arvosana ="";
+			//2 if valintalauseet
+            if (pisteet >=27 && pisteet <= 30){
+                 arvosana = "kiitettävä eli 5";
+			} else if (pisteet>=24 && pisteet <=26){
+				arvosana = "erinomainen eli 4";
+			} else if (pisteet >=21 && pisteet <=23){
+				arvosana = "hyvä eli 3";
+			} else if (pisteet >=18 && pisteet <=20){
+				arvosana = "tyydyttävä eli 2";
+			} else if (pisteet >= 15 && pisteet <= 17){
+				 arvosana = "heikko eli 1";
+
+				} else {
+					arvosana ="hylätty eli 0";
+				}
+
+			
+			//3 tulostetaan arvosana sivulle
+			document.getElementById("vastaus").innerHTML
+			= "Arvosana on " + arvosana;
+
+		}
+	</script>
+</body>
+
+</html>
